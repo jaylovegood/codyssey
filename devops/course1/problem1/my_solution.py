@@ -1,2 +1,6 @@
 def hello():
-    print("hello")
+    return "Hello"
+
+print("'", end="")
+print(hello(), end="")
+print("'")
