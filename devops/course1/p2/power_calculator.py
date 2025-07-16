@@ -2,8 +2,11 @@ def power(number, exp):
 
     result = 1
     
-    for _ in range(exp):
+    for _ in range(abs(exp)):
         result *= number
+
+    if exp < 0:
+        result = 1 / result
 
     return result
 
@@ -20,7 +23,12 @@ def main():
         print("Invalid exponent input.")
         return
     
-    result = power(number, exponent)
+    try:
+        result = power(number, exponent)
+    except:
+        print("Division by zero.")
+        return
+
     print(f"Result: {result}")
     
 
